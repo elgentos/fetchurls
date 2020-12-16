@@ -8,5 +8,5 @@ Usage in the crontab for our clients (with use of the modified `-e` flag to skip
 
 ```
 # Cache warming
-0 6 * * * bash fetchurls.sh -d https://domainhere.com -l /data/web/crawler -e "customer|checkout" -n
+0 6 * * * bash fetchurls.sh -d https://domainhere.com -l /data/web/crawler -e "customer|checkout|\.bmp|\.css|\.doc|\.docx|\.^Cf|\.jpeg|\.jpg|\.JPG|\.js|\.map|\.pdf|\.PDF|\.png|\.ppt|\.pptx|\.svg|\.ts|\.txt|\.xls|\.xlsx|\.xml" -n
 ````
