@@ -1,4 +1,4 @@
-# fetchurls
+# fetchurls cache warmer
 
 For the full README, see [here](https://github.com/adamdehaven/fetchurls).
 
