@@ -20,6 +20,7 @@ USER_SLEEP=
 USER_CRENDENTIAL_USERNAME=
 USER_CRENDENTIAL_PASSWORD=
 USER_CREDENTIALS=
+USER_AGENT="elgentos-fetchurls"
 
 # Set colors
 COLOR_RED=$'\e[31m'
@@ -342,7 +343,7 @@ displaySpinner()
 }
 
 fetchUrlsForDomain() {
-  cd $USER_SAVE_LOCATION && wget --spider -r -nd --max-redirect=30 $IGNORE_ROBOTS $USER_SLEEP $USER_CREDENTIALS $USER_DOMAIN 2>&1 \
+  cd $USER_SAVE_LOCATION && wget --spider -r -nd --max-redirect=30 $IGNORE_ROBOTS $USER_SLEEP $USER_CREDENTIALS $USER_DOMAIN --user-agent="$USER_AGENT" 2>&1 \
   | grep '^--' \
   | awk '{ print $3 }' \
   | grep -E -v '('${USER_EXCLUDED_EXTENTIONS}')' \
